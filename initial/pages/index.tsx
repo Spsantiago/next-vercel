@@ -32,7 +32,6 @@ export default function Home() {
                 <Link href="/about" className="card" rel="noopener noreferrer">
                     <h2>
                         About <span>-&gt;</span>
-                        paprobarnada mas 
                     </h2>
                 </Link>
             </div>
