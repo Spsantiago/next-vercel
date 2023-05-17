@@ -1,9 +1,10 @@
 import { Spacer, Text, useTheme, Link } from '@nextui-org/react';
 import Image from 'next/image';
-import NextLink from 'next/link';
+
 
 export const Navbar = () => {
     const { theme } = useTheme();
+    
     return (
         <div
             style={{
@@ -11,7 +12,8 @@ export const Navbar = () => {
                 display: 'flex',
                 width: '100%',
                 alignItems: 'center',
-                padding: '0px 2px',
+                padding: '0px 30px 0px 10px' ,
+               
                 flexDirection: 'row',
                 justifyContent: 'start',
                 color: 'red',
@@ -36,11 +38,11 @@ export const Navbar = () => {
             </Link>
 
             <Spacer css={{ flex: '1' }} />
-            <NextLink href="/favorites" passHref>
+            <Link href="/favorites">
                 <div>
                     <Text color="white">Favoritos</Text>
                 </div>
-            </NextLink>
+            </Link>
         </div>
     );
 };
