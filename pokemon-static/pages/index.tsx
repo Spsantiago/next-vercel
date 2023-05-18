@@ -29,13 +29,13 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     const pokemons: SmallPokemon[] = data.results.map((poke, i) => ({
         ...poke,
         id: i + 1,
-        img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
-            i + 1
-        }.png`,
+        img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${ i + 1 }.png`,
     }));
+  
     return {
         props: {
-            pokemons: pokemons,
+         pokemons: pokemons,
+ 
         },
     };
 };
