@@ -1,3 +1,3 @@
-export * from './layout'
-export * from './cardPokemon'
-export * from './favoritePokemon'
+export * from './Layout'
+export * from './CardPokemon'
+export * from './FavoritePokemon'

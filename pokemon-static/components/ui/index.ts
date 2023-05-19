@@ -1,2 +1,2 @@
-export * from './navbar'
-export * from './noFavorites'
+export * from './Navbar'
+export * from './NoFavorites'
