@@ -1,5 +1,5 @@
 import { Card, Grid, Row, Text } from '@nextui-org/react'
-import { FavoriteCardPokemon } from './favoriteCardPokemon'
+import { FavoriteCardPokemon } from './FavoriteCardPokemon'
 
 
 
