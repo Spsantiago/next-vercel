@@ -5,7 +5,7 @@ import { Card, Grid, Image, Text, Button, Container } from '@nextui-org/react';
 
 import confetti from 'canvas-confetti'
 
-import { localFavorites } from '@/utils';
+import { getPokemonInfo, localFavorites } from '@/utils';
 import { Layout } from '@/components/layouts';
 import { pokeAPI } from '@/api';
 import { Pokemon } from '@/interfaces';
@@ -36,7 +36,7 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
 
     return (
         <>
-            <Layout>
+            <Layout title={pokemon.name}>
                 <Grid.Container css={{ marginTop: '5 px' }} gap={2}>
                     <Grid xs={12} sm={4}>
                         <Card isHoverable css={{ padding: '30px' }}>
@@ -123,10 +123,10 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const { id } = params as { id: string };
-    const { data } = await pokeAPI.get<Pokemon>(`/pokemon/${id}`);
+ 
     return {
         props: {
-            pokemon: data,
+            pokemon: await getPokemonInfo(id),
         },
     };
 };
