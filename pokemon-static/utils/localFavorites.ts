@@ -1,29 +1,25 @@
-const toggleFavorite = (id:number) => {
-    
-    let favorites:number[]= JSON.parse(localStorage.getItem('favorites')||'[]')
+const toggleFavorite = (id: number) => {
+    let favorites: number[] = JSON.parse( localStorage.getItem('favorites') || '[]' );
 
     if (favorites.includes(id)) {
-        favorites=favorites.filter(pokeId=>pokeId!=id)
+        favorites = favorites.filter((pokeId) => pokeId != id);
     } else {
-        favorites.push(id)       
+        favorites.push(id);
     }
-    localStorage.setItem('favorites',JSON.stringify(favorites))
+    localStorage.setItem('favorites', JSON.stringify(favorites));
 };
 
-const inFavorites=(id:number): boolean=>{
-    
-    if (typeof window==='undefined') return false 
+const inFavorites = (id: number): boolean => {
+    if (typeof window === 'undefined') return false;
 
-    let favorites:number[]= JSON.parse(localStorage.getItem('favorites')||'[]')
+    let favorites: number[] = JSON.parse( localStorage.getItem('favorites') || '[]' );
 
-    return favorites.includes(id)
-}
+    return favorites.includes(id);
+};
 
-const pokemon =()=>{
-    return JSON.parse(localStorage.getItem('favorites')||'[]')
-}
-const exportedFunctions = { toggleFavorite, inFavorites,pokemon };
-     
+const pokemon = () => {
+    return JSON.parse(localStorage.getItem('favorites') || '[]');
+};
+const exportedFunctions = { toggleFavorite, inFavorites, pokemon };
+
 export default exportedFunctions;
-
-
