@@ -3,6 +3,8 @@ import { EntriesState } from './';
 
 type EntriesActionType =
     | { type: '[Entry] Add-Entry', payload: Entry }
+    | { type: '[Entry] Entry-Uptade', payload: Entry }
+
 
 export const entriesReducer = (state: EntriesState, action: EntriesActionType): EntriesState => {
     switch (action.type) {
@@ -11,6 +13,17 @@ export const entriesReducer = (state: EntriesState, action: EntriesActionType): 
                 ...state,
                 entries:[...state.entries, action.payload]
             };
+        case '[Entry] Entry-Uptade':
+            return{
+                ...state,
+                entries: state.entries.map(entry=>{
+                    if (entry._id===action.payload._id){
+                        entry.status= action.payload.status;
+                        entry.description= action.payload.description
+                    }
+                    return entry
+                })
+            }
 
         default:
             return state;
