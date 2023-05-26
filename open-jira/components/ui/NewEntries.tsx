@@ -23,6 +23,7 @@ export const NewEntries = () => {
         setIsAddingEntry(false);
         setTouched(false);
         setInputValue('');
+        
     };
 
     return (

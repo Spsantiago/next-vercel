@@ -13,11 +13,14 @@ export default function HomePage() {
                             <CardContent>
 
 
-                                <NewEntries/    >
+                                <NewEntries/>
                                 <EntrieList status='pending'/>
                             </CardContent>
                         </Card>
                     </Grid>
+
+
+
                     <Grid item xs={12} sm={4}>
                         <Card sx={{ height: 'calc(100vh - 100px)' }}>
                             <CardHeader title="En Proceso" />
@@ -25,7 +28,10 @@ export default function HomePage() {
                                 <EntrieList status='in-progres'/>
                             </CardContent>
                         </Card>
-                    </Grid> <Grid item xs={12} sm={4}>
+                    </Grid>
+                    
+                    
+                    <Grid item xs={12} sm={4}>
                         <Card sx={{ height: 'calc(100vh - 100px)' }}>
                             <CardHeader title="Completados" />
                             <CardContent>

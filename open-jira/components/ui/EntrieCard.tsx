@@ -2,6 +2,7 @@ import { UiContext } from '@/context/ui'
 import { Entry } from '@/interfaces'
 import { Card, CardActionArea, CardActions, CardContent, Typography } from '@mui/material'
 import {DragEvent, FC, useContext} from 'react'
+import { obtenerFechaLocal } from './';
 
 
 interface Props{
@@ -23,7 +24,6 @@ export const EntrieCard: FC<Props> = ({entry}) => {
 
     const onDragEnd= ()=>{
         endDragging()
-        // todo:fin del drag
     }
 
 
@@ -43,7 +43,8 @@ export const EntrieCard: FC<Props> = ({entry}) => {
             </CardContent>
         <CardActions sx={{ display: 'flex', justifyContent: 'end', paddingRight: 2}}>
             <Typography variant='body2'>
-                hace 30 minutos 
+                {obtenerFechaLocal(entry.createad
+                )}
             </Typography>
         </CardActions>
         </CardActionArea>
