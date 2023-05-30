@@ -19,7 +19,7 @@ export const seedData: seedData={
         },
         {
             description: 'linea 2',
-            status: 'pending',
+            status: 'finished',
             createad: Date.now() - 1000000,
         },
         {

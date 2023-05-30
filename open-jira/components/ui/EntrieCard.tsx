@@ -1,7 +1,8 @@
+import {DragEvent, FC, useContext} from 'react'
+import { useRouter } from 'next/router';
+import { Card, CardActionArea, CardActions, CardContent, Typography } from '@mui/material'
 import { UiContext } from '@/context/ui'
 import { Entry } from '@/interfaces'
-import { Card, CardActionArea, CardActions, CardContent, Typography } from '@mui/material'
-import {DragEvent, FC, useContext} from 'react'
 import { obtenerFechaLocal } from './';
 
 
@@ -12,7 +13,7 @@ interface Props{
 
 
 export const EntrieCard: FC<Props> = ({entry}) => {
-
+    const router = useRouter()
 
     const {endDragging,startDragging} = useContext(UiContext)
 
@@ -25,7 +26,9 @@ export const EntrieCard: FC<Props> = ({entry}) => {
     const onDragEnd= ()=>{
         endDragging()
     }
-
+    const onClick=()=>{
+        router.push(`/entries/${entry._id}`)
+    }
 
   return (
     <Card
@@ -33,6 +36,7 @@ export const EntrieCard: FC<Props> = ({entry}) => {
     draggable
     onDragStart={onDragStart}
     onDragEnd={onDragEnd}
+    onClick={onClick}
     >
 
         <CardActionArea>

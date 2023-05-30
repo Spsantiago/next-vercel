@@ -7,10 +7,10 @@ type Data = { message: string } | IEntry[]| IEntry;
 export default function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
-) {
+) { 
     switch (req.method) {
         case 'GET':
-            return getEntries(res);
+            return getEntry(res);
         case 'POST':
             return postEntry(req, res);
 
@@ -19,7 +19,7 @@ export default function handler(
     }
 }
 
-const getEntries = async (res: NextApiResponse<Data>) => {
+const getEntry = async (res: NextApiResponse<Data>) => {
     await db.connect();
 
     const entries = await Entry.find().sort({ createad: 'ascending' });
