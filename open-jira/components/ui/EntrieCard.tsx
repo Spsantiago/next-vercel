@@ -4,6 +4,7 @@ import { Card, CardActionArea, CardActions, CardContent, Typography } from '@mui
 import { UiContext } from '@/context/ui'
 import { Entry } from '@/interfaces'
 import { obtenerFechaLocal } from './';
+import { dateFunctions } from '@/utils';
 
 
 interface Props{
@@ -47,8 +48,7 @@ export const EntrieCard: FC<Props> = ({entry}) => {
             </CardContent>
         <CardActions sx={{ display: 'flex', justifyContent: 'end', paddingRight: 2}}>
             <Typography variant='body2'>
-                {obtenerFechaLocal(entry.createad
-                )}
+                {dateFunctions.getFormantDistance(entry.createad)}
             </Typography>
         </CardActions>
         </CardActionArea>
