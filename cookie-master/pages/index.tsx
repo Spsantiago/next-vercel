@@ -1,12 +1,12 @@
+import { Layout } from "@/components/layouts";
 
 
 export default function Home() {
-  return (
-    < >
-      <h1>
-
-        hola mundo
-      </h1>
-    </>
-  )
+    return (
+        <>
+            <Layout>
+                <h1>hola mundo</h1>
+            </Layout>
+        </>
+    );
 }

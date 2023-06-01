@@ -1,5 +1,5 @@
 import '@/styles/globals.css'
-import { darkTheme } from '@/themes'
+import { darkTheme, customTheme,lightTheme } from '@/themes'
 import { CssBaseline, ThemeProvider } from '@mui/material'
 import type { AppProps } from 'next/app'
 import '@fontsource/roboto/300.css';
