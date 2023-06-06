@@ -9,7 +9,7 @@ const Custom404 = () => {
                 display='flex'
                 justifyContent='center'
                 alignItems='center'
-                height='calc(100hv -100px) '
+                height='calc(100hv - 100px) '
                 sx={{flexDirection:{xs:'column', sm:'row'}}}
             >
                 <Typography

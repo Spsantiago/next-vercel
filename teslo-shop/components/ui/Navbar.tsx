@@ -1,3 +1,4 @@
+import NextLink from 'next/link';
 import {
     AppBar,
     Badge,
@@ -8,17 +9,17 @@ import {
     Toolbar,
     Typography,
 } from '@mui/material';
-import NextLink from 'next/link';
 import { SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 
 export const Navbar = () => {
     return (
         <AppBar>
             <Toolbar>
-                <NextLink href='/' passHref>
-                    <Link component={'span'} display='flex' alignItems='center'>
-                        <Typography variant='h6'>Teslo |</Typography>
-                        <Typography sx={{ marginLeft: 0.5 }}>Shop</Typography>
+                <NextLink href='/' passHref style={{textDecoration:'none'}}>
+                    <Link component='span' display='flex' alignItems='center' >
+                        <Typography variant='h6' color='#000' >Teslo |</Typography>
+                        <Typography sx={{ marginLeft: 0.5 }}color='#000'>Shop</Typography>
+             
                     </Link>
                 </NextLink>
 
