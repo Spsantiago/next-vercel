@@ -16,8 +16,7 @@ export default function handler(
     //}
 
     switch (req.method) {
-        case 'PUT':
-            return updateProduct(req, res);
+      
         case 'GET':
             return getProduct(req, res);
 
@@ -25,8 +24,9 @@ export default function handler(
             return res.status(200).json({ menssage: 'Metodo no existe' });
     }
 }
-
-const updateProduct = async (req: NextApiRequest, res: NextApiResponse) => {
+ {/*  case 'PUT':
+            return updateProduct(req, res);*/}
+{/**const updateProduct = async (req: NextApiRequest, res: NextApiResponse) => {
     const { slug } = req.query;
     await db.connect();
 
@@ -44,7 +44,7 @@ const updateProduct = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
         const updateProduct = await Product.findOneAndUpdate(
            { slug},
-            { description, status },
+            { description },
             { runValidators: true, new: true }
         );
         await db.disconnect();
@@ -53,7 +53,7 @@ const updateProduct = async (req: NextApiRequest, res: NextApiResponse) => {
         await db.disconnect();
         res.status(400).json({ menssage: error.errors.status.menssage });
     }
-};
+};*/}
 
 const getProduct = async (req: NextApiRequest, res: NextApiResponse) => {
     const { slug } = req.query;
